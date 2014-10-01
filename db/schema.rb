@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140121225925) do
-
-  create_table "my_users", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20140121225800) do
 
   create_table "rails_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

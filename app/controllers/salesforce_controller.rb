@@ -2,7 +2,7 @@ class SalesforceController < ApplicationController
 
   def accounts
     @page = (params[:page] || 1).to_i
-    @accounts = Account.order("name").offset(@page*20).limit(20).all()
+    @accounts = Account.order("name").offset(@page * 20).limit(20).all()
   end
 
   def account
@@ -21,7 +21,7 @@ class SalesforceController < ApplicationController
 
   def contacts
     @page = (params[:page] || 1).to_i
-    @contacts = Contact.order("lastname").offset(@page*20).limit(20).all()
+    @contacts = Contact.order("lastname").offset(@page * 20).limit(20).all()
   end
 
 end

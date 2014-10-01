@@ -1,15 +1,15 @@
 class SalesforceModel < ActiveRecord::Base
-    self.abstract_class = true
-    self.inheritance_column = 'rails_type'
+  self.abstract_class = true
+  self.inheritance_column = 'rails_type'
 
-    if ENV['HEROKUCONNECT_URL'].nil?
-    	puts "WARNING: YOU SHOULD SET HEROKUCONNECT_URL IN YOUR ENVIRONMENT"
-    end
-    if ENV['HEROKUCONNECT_SCHEMA'].nil?
-    	puts "WARNING: YOU SHOULD SET HEROKUCONNECT_SCHEMA IN YOUR ENVIRONMENT"
-    end
+  if ENV['HEROKUCONNECT_URL'].nil?
+    puts "WARNING: YOU SHOULD SET HEROKUCONNECT_URL IN YOUR ENVIRONMENT"
+  end
+  if ENV['HEROKUCONNECT_SCHEMA'].nil?
+    puts "WARNING: YOU SHOULD SET HEROKUCONNECT_SCHEMA IN YOUR ENVIRONMENT"
+  end
 
-    establish_connection ENV['HEROKUCONNECT_URL']
+  establish_connection ENV['HEROKUCONNECT_URL']
 	attr_protected :createddate, :systemmodstamp, :lastmodifieddate
 
 	def hc_errors
